@@ -79,3 +79,8 @@ sudo -i
 chmod 777 start_docker.sh
 ./start_docker.sh 
 ```
+
+## Docker Repo
+```
+https://hub.docker.com/repository/docker/nirav96/jenkins
+```
