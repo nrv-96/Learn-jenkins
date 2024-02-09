@@ -73,3 +73,9 @@ docker pull devopsjourney1/myjenkinsagents:python
 su root
 and enter root password
 ```
+## Run automatic all process
+```
+sudo -i
+chmod 777 start_docker.sh
+./start_docker.sh 
+```
