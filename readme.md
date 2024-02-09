@@ -67,3 +67,9 @@ docker inspect <container_id> | grep IPAddress
 ```
 docker pull devopsjourney1/myjenkinsagents:python
 ```
+
+## root user switch
+```
+su root
+and enter root password
+```
