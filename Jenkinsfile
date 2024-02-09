@@ -35,5 +35,23 @@ pipeline {
                 '''
             }
         }
+        stage('Deploy') {
+            environment {                
+                ENVIRONMENT = sh(script: 'echo $BRANCH_NAME', returnStdout: true).trim()
+            }
+            steps {
+                script {
+                    if (ENVIRONMENT == 'dev') {
+                        sh 'echo "Deploying to dev environment..."'
+                    } else if (ENVIRONMENT == 'stage') {
+                        sh 'echo "Deploying to stage environment..."'
+                    } else if (ENVIRONMENT == 'prod') {
+                        sh 'echo "Deploying to prod environment..."'
+                    } else {
+                        error "Unsupported environment: $ENVIRONMENT"
+                    }
+                }
+            }
+        }
     }
 }
