@@ -8,6 +8,8 @@ docker run --name jenkins-blueocean --restart=on-failure --detach \
   --volume jenkins-data:/var/jenkins_home \
   --volume jenkins-docker-certs:/certs/client:ro \
    nirav96/jenkins:latest
+sleep 5
 id=$(docker ps --format "{{.ID}}")
+sleep 5
 jenkins_password=$(docker exec $id cat  /var/jenkins_home/secrets/initialAdminPassword)
 echo "Jenkins Admin Password: "$jenkins_password
