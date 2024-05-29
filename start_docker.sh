@@ -13,3 +13,4 @@ id=$(docker ps --format "{{.ID}}")
 sleep 5
 jenkins_password=$(docker exec $id cat  /var/jenkins_home/secrets/initialAdminPassword)
 echo "Jenkins Admin Password: "$jenkins_password
+# http://localhost:8080/
