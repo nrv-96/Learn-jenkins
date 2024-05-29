@@ -1,7 +1,7 @@
 #!/bin/bash
 #docker build -t myjenkins-blueocean:2.414.2 .
 docker_container_name="jenkins-blueocean"
-docker network create jenkins
+docker network ls | grep -q jenkins || docker network create jenkins
 docker run --name "$docker_container_name" --restart=on-failure --detach \
   --network jenkins --env DOCKER_HOST=tcp://docker:2376 \
   --env DOCKER_CERT_PATH=/certs/client --env DOCKER_TLS_VERIFY=1 \
